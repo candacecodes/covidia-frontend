@@ -24,10 +24,6 @@ class Card extends Component {
           aria-pressed="false"
           autocomplete="off"
         >
-          Add Card to Your Deck
-        </button>
-
-        <button type="button" class="btn btn-light">
           Edit Card
         </button>
 

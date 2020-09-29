@@ -24,7 +24,7 @@ class App extends Component {
   //   console.log(imgsrc);
   // };
 
-  createCard = (description, imgsrc) => {
+  createCard = (description, imgsrc, deck) => {
     console.log(description);
     console.log(imgsrc);
 
@@ -35,7 +35,7 @@ class App extends Component {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        card: { description: description, imgsrc: imgsrc },
+        card: { description: description, imgsrc: imgsrc, deck_id: deck },
       }),
       // backend has strong params, and the strong params expect to receive a key of card; need send an object with a key of card
     })
@@ -47,7 +47,7 @@ class App extends Component {
             ...this.state.cards,
             {
               id: json.id,
-              deck_id: 1,
+              deck_id: deck,
               description: description,
               imgsrc: imgsrc,
             },
@@ -104,9 +104,9 @@ class App extends Component {
           <img src="https://innovativegenomics.org/wp-content/uploads/2020/04/Abstract-SARS-CoV-2-in-red-with-RNA.png" />
           <p>COVIDIA</p>
         </header>
+        <Deck />
         <Cards cards={this.state.cards} />
         <CreateCard onSubmit={this.createCard} />
-        <Deck />
       </div>
     );
   }

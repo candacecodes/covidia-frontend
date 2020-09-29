@@ -5,16 +5,18 @@ class CreateCard extends Component {
     // id: "",
     description: "",
     imgsrc: "",
+    deck: "",
   };
 
   handleForm = (e) => {
     e.preventDefault();
     const description = this.state.description;
     const imgsrc = this.state.imgsrc;
+    const deck = this.state.deck;
     // console.log(description);
     // console.log(imgsrc);
     // this.props.createCard(description, imgsrc);
-    this.props.onSubmit(description, imgsrc);
+    this.props.onSubmit(description, imgsrc, deck);
   };
 
   handleDescriptionChange = (e) => {
@@ -27,6 +29,14 @@ class CreateCard extends Component {
   handleImgSrc = (e) => {
     this.setState({
       imgsrc: e.target.value,
+    });
+    // console.log(e.target.value);
+  };
+
+  handleDeckSrc = (e) => {
+    console.log(parseInt(e.target.value));
+    this.setState({
+      deck: parseInt(e.target.value),
     });
     // console.log(e.target.value);
   };
@@ -53,7 +63,15 @@ class CreateCard extends Component {
               value={this.state.imgsrc}
               onChange={this.handleImgSrc}
             />
-          </div>{" "}
+          </div>
+          <div>
+            <label>Deck</label> <br />
+            <input
+              type="text"
+              value={this.state.deck}
+              onChange={this.handleDeckSrc}
+            />
+          </div>
           <br />
           <button type="submit" class="btn btn-secondary">
             Create Card

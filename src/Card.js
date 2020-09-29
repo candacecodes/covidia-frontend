@@ -17,6 +17,16 @@ class Card extends Component {
         <h3> {description} </h3>
         <h4> {imgsrc} </h4>
 
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-toggle="button"
+          aria-pressed="false"
+          autocomplete="off"
+        >
+          Add to Deck
+        </button>
+
         {/* {this.state.showDetails && <HogDetails hog={this.props.hog} />} */}
         {/* {this.state.showDetails ? <HogDetails hog={this.props.hog} /> : null} */}
 

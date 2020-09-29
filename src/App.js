@@ -56,6 +56,47 @@ class App extends Component {
       });
   };
 
+  // edit template
+  // updateCard = (id, card) => {
+  //   fetch(`http://localhost:3000/cards/${id}`, {
+  //     method: "PATCH",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json",
+  //     },
+  //     body: JSON.stringify(goal),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       let goals = this.state.cards.map((card) => {
+  //         if (card.id === json.id) {
+  //           let newCard = {
+  //             card: { description: description, imgsrc: imgsrc },
+  //           };
+  //           return newCard;
+  //         } else {
+  //           return card;
+  //         }
+  //       });
+  //       this.setState({
+  //         cards: cards,
+  //       });
+  //     });
+  // };
+
+  // delete template
+  // deleteCard = (id, card) => {
+  //   fetch(`http://localhost:3000/cards/${id}`, {method: 'DELETE'})
+  //   .then(res => res.json())
+  //   .then(json => {
+  //     console.log(json)
+  //     let cards = this.state.cards.filter(card => card.id !== id)
+  //     this.setState({
+  //       cards: cards
+  //     })
+  //   })
+  // }
+
   render() {
     return (
       <div className="App">

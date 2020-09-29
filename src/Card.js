@@ -19,12 +19,20 @@ class Card extends Component {
 
         <button
           type="button"
-          class="btn btn-secondary"
+          class="btn btn-warning"
           data-toggle="button"
           aria-pressed="false"
           autocomplete="off"
         >
-          Add to Deck
+          Add Card to Your Deck
+        </button>
+
+        <button type="button" class="btn btn-light">
+          Edit Card
+        </button>
+
+        <button type="button" class="btn btn-light">
+          Delete Card
         </button>
 
         {/* {this.state.showDetails && <HogDetails hog={this.props.hog} />} */}

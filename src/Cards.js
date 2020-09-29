@@ -17,8 +17,8 @@ import Card from "./Card";
 const Cards = ({ cards }) => {
   console.log(cards);
   return (
-    <div className="ui grid container">
-      <h1>Cards</h1>
+    <div className="cardlistdiv">
+      {/* <h1> -- </h1> */}
       {cards.map((card) => (
         <Card
           key={card.id}

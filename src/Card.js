@@ -11,9 +11,11 @@ class Card extends Component {
   // };
 
   render() {
+    const { description, imgsrc } = this.props.card;
     return (
-      <div className="ui eight wide column">
-        <h3>{this.props.card.description}</h3>
+      <div className="card">
+        <h3> {description} </h3>
+        <h4> {imgsrc} </h4>
 
         {/* {this.state.showDetails && <HogDetails hog={this.props.hog} />} */}
         {/* {this.state.showDetails ? <HogDetails hog={this.props.hog} /> : null} */}

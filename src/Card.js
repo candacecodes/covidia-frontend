@@ -13,25 +13,27 @@ class Card extends Component {
   //   this.setState({ showDetails: !this.state.showDetails });
   // };
 
-  editCardInfo = (id) => {
-    console.log(id);
-  };
-
-  // function to console log what text is originally is when clicked
-  // _handleFocus = (text) => {
-  //   console.log("Focused with text: " + text); //
+  // editCardInfo = (id) => {
+  //   console.log(id);
   // };
 
-  _handleFocusOutDescription = (description, id) => {
-    console.log("Left editor with text: " + description);
-    this.setState({ description: description });
+  // function to console log what text is originally is when clicked
+  _handleFocus = (text) => {
+    // console.log("Focused with text: " + text); //
   };
 
-  _handleFocusOutImgSrc = (imgsrc, id) => {
-    // console.log("Left editor with text: " + imgsrc);
-    this.setState({ imgsrc: imgsrc });
-    // stored state here
+  _handleFocusOutDescription = (id, description) => {
+    // console.log("Left editor with text: " + description);
+    // console.log("id " + id);
+    this.setState({ description: description });
+    this.props.editCard(description, id);
   };
+
+  // _handleFocusOutImgSrc = (imgsrc, id) => {
+  //   // console.log("Left editor with text: " + imgsrc);
+  //   this.setState({ imgsrc: imgsrc });
+  //   // stored state here
+  // };
 
   render() {
     const { description, imgsrc } = this.state;
@@ -41,8 +43,8 @@ class Card extends Component {
       card: { id },
     } = this.props;
     // card:{id} is destructuring an object
-    console.log(description);
-    console.log(imgsrc);
+    // console.log(description);
+    // console.log(imgsrc);
     return (
       <div className="card">
         {/* <h3> {description} </h3>
@@ -58,7 +60,9 @@ class Card extends Component {
           // labelFontWeight="bold"
           // inputFontWeight="bold"
           // onFocus={this._handleFocus}
-          onFocusOut={this._handleFocusOutDescription}
+          onFocusOut={(description) =>
+            this._handleFocusOutDescription(id, description)
+          }
         />
 
         {/* add in imgsrc later  */}
@@ -76,7 +80,7 @@ class Card extends Component {
         /> */}
 
         <button
-          onClick={() => this.editCardInfo(id)}
+          // onClick={() => this.editCard(id)}
           type="button"
           class="btn btn-warning"
           data-toggle="button"

@@ -64,32 +64,38 @@ class App extends Component {
   };
 
   // edit template
-  editCard = (id) => {
-    console.log(id);
-    // fetch(`http://localhost:3000/cards/${id}`, {
-    //   method: "PATCH",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json",
-    //   },
-    //   body: JSON.stringify(body),
-    // })
-    //   .then((res) => res.json())
-    //   .then((json) => {
-    //     let goals = this.state.cards.map((card) => {
-    //       if (card.id === json.id) {
-    //         let newCard = {
-    //           card: { description: description, imgsrc: imgsrc },
-    //         };
-    //         return newCard;
-    //       } else {
-    //         return card;
-    //       }
-    //     });
-    //     this.setState({
-    //       cards: cards,
-    //     });
-    //   });
+  editCard = (description, id) => {
+    console.log(description);
+    console.log("id " + id);
+
+    let data = {
+      description: description,
+    };
+
+    fetch(`http://localhost:3000/cards/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        let cards = this.state.cards.map((card) => {
+          if (card.id === json.id) {
+            let newCard = {
+              card: { description: description },
+            };
+            return newCard;
+          } else {
+            return card;
+          }
+        });
+        this.setState({
+          cards: cards,
+        });
+      });
   };
 
   // delete template

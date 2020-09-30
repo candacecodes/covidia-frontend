@@ -14,7 +14,9 @@ import Card from "./Card";
 //   }
 // }
 
-const Cards = ({ cards }) => {
+const Cards = ({ cards, decks, editCard, deleteCard }) => {
+  // const {x, y, z} = props => different way of destructuring; and put in props in argument for function
+  // from ES5 {cards} destructures = separates props into separate objects
   console.log(cards);
   return (
     <div className="cardlistdiv">
@@ -23,6 +25,9 @@ const Cards = ({ cards }) => {
         <Card
           key={card.id}
           card={card}
+          editCard={editCard}
+          deleteCard={deleteCard}
+
           //   handleHogHideAndSeek={redeemHog}
           //   buttonText="Redeem Hog"
         />

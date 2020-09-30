@@ -10,14 +10,20 @@ class Card extends Component {
   //   this.setState({ showDetails: !this.state.showDetails });
   // };
 
+  editCardInfo = (id) => {
+    console.log(id);
+  };
+
   render() {
-    const { description, imgsrc } = this.props.card;
+    const { description, imgsrc, id } = this.props.card;
+    const { editCard, deleteCard } = this.props;
     return (
       <div className="card">
         <h3> {description} </h3>
         <h4> {imgsrc} </h4>
 
         <button
+          onClick={() => this.editCardInfo(id)}
           type="button"
           class="btn btn-warning"
           data-toggle="button"
@@ -27,7 +33,11 @@ class Card extends Component {
           Edit Card
         </button>
 
-        <button type="button" class="btn btn-light">
+        <button
+          onClick={() => deleteCard(id)}
+          type="button"
+          class="btn btn-light"
+        >
           Delete Card
         </button>
 

@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.h3,
+h3 {
+  font-size: 18px;
+  font-family: Verdana, Geneva, sans-serif;
+}

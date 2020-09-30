@@ -85,6 +85,7 @@ class App extends Component {
         let cards = this.state.cards.map((card) => {
           if (card.id === json.id) {
             let newCard = {
+              id: json.id,
               card: { description: description },
             };
             return newCard;

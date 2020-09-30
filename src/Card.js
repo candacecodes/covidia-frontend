@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import EditableLabel from "react-inline-editing";
 
 class Card extends Component {
   state = {
     showDetails: false,
+    description: this.props.card.description,
+    imgsrc: this.props.card.imgsrc,
   };
 
   // handleToggleDetails = () => {
@@ -14,13 +17,63 @@ class Card extends Component {
     console.log(id);
   };
 
+  // function to console log what text is originally is when clicked
+  // _handleFocus = (text) => {
+  //   console.log("Focused with text: " + text); //
+  // };
+
+  _handleFocusOutDescription = (description) => {
+    console.log("Left editor with text: " + description);
+    this.setState({ description: description });
+    // store state here
+  };
+
+  _handleFocusOutImgSrc = (imgsrc) => {
+    // console.log("Left editor with text: " + imgsrc);
+    this.setState({ imgsrc: imgsrc });
+    // store state here
+  };
+
   render() {
-    const { description, imgsrc, id } = this.props.card;
-    const { editCard, deleteCard } = this.props;
+    const { description, imgsrc } = this.state;
+    const {
+      editCard,
+      deleteCard,
+      card: { id },
+    } = this.props;
+    // card:{id} is destructuring an object
+    console.log(description);
+    console.log(imgsrc);
     return (
       <div className="card">
-        <h3> {description} </h3>
-        <h4> {imgsrc} </h4>
+        {/* <h3> {description} </h3>
+        <h4> {imgsrc} </h4> */}
+
+        <EditableLabel
+          text={description}
+          labelClassName="myLabelClass"
+          inputClassName="myInputClass"
+          inputWidth="200px"
+          inputHeight="25px"
+          inputMaxLength="50"
+          labelFontWeight="bold"
+          inputFontWeight="bold"
+          // onFocus={this._handleFocus}
+          onFocusOut={this._handleFocusOutDescription}
+        />
+
+        <EditableLabel
+          text={imgsrc}
+          labelClassName="myLabelClass"
+          inputClassName="myInputClass"
+          inputWidth="200px"
+          inputHeight="25px"
+          inputMaxLength="50"
+          labelFontWeight="bold"
+          inputFontWeight="bold"
+          // onFocus={this._handleFocus}
+          onFocusOut={this._handleFocusOutImgSrc}
+        />
 
         <button
           onClick={() => this.editCardInfo(id)}

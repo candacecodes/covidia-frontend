@@ -34,7 +34,7 @@ class CreateCard extends Component {
   };
 
   handleDeckSrc = (e) => {
-    console.log(e.target.value);
+    console.log("deck_id", e.target.value);
     // this.setState({
     //   deck: parseInt(e.target.value),
     // });

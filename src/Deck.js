@@ -6,7 +6,7 @@ class Deck extends React.Component {
   render() {
     return (
       <div className="filter">
-        <h1>Filter By</h1>
+        <h1>Find By</h1>
         {/* <label>Deck</label> <br /> */}
         {/* <select>
               type="text" // option value={this.state.deck}

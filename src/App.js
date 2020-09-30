@@ -7,7 +7,7 @@ import CreateCard from "./CreateCard";
 class App extends Component {
   state = {
     cards: [],
-    deck: [],
+    decks: [],
   };
 
   componentDidMount() {
@@ -15,6 +15,13 @@ class App extends Component {
       .then((res) => res.json())
       .then((cards) => {
         this.setState({ cards });
+        // console.log(cards);
+      });
+
+    fetch("http://localhost:3000/decks")
+      .then((res) => res.json())
+      .then((decks) => {
+        this.setState({ decks });
         // console.log(cards);
       });
   }
@@ -111,5 +118,7 @@ class App extends Component {
     );
   }
 }
+// functional
+// class
 
 export default App;

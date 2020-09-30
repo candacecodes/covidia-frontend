@@ -34,9 +34,12 @@ class CreateCard extends Component {
   };
 
   handleDeckSrc = (e) => {
-    console.log(parseInt(e.target.value));
+    console.log(e.target.value);
+    // this.setState({
+    //   deck: parseInt(e.target.value),
+    // });
     this.setState({
-      deck: parseInt(e.target.value),
+      deck: e.target.value,
     });
     // console.log(e.target.value);
   };
@@ -65,12 +68,19 @@ class CreateCard extends Component {
             />
           </div>
           <div>
+            {/* {this.props.deck.map} | deck = array, inside of select, .map on deck array and return an option which fills in the select  */}
             <label>Deck</label> <br />
-            <input
-              type="text"
+            <select
+              name="decks"
+              id="decks"
               value={this.state.deck}
               onChange={this.handleDeckSrc}
-            />
+            >
+              <option value="1">Virology</option>
+              <option value="2">Epidemiology</option>
+              <option value="3">Statistics</option>
+              <option value="4">Trivia</option>
+            </select>
           </div>
           <br />
           <button type="submit" class="btn btn-secondary">

@@ -5,12 +5,19 @@ import React from "react";
 class Deck extends React.Component {
   render() {
     return (
-      <div className="ui cards">
-        <h1>Filter </h1>
-
-        {/* {this.props.pets.map((pet) => (
-              <Pet key={pet.id} pet={pet} onAdoptPet={this.props.onAdoptPet} />
-            ))} */}
+      <div className="filter">
+        <h1>Filter By</h1>
+        {/* <label>Deck</label> <br /> */}
+        {/* <select>
+              type="text" // option value={this.state.deck}
+              onChange={this.handleDeckSrc}>
+            </select> */}
+        <select name="decks" id="decks">
+          <option value="1">Virology</option>
+          <option value="2">Epidemiology</option>
+          <option value="3">Statistics</option>
+          <option value="4">Trivia</option>
+        </select>
       </div>
     );
   }

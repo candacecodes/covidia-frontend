@@ -22,16 +22,15 @@ class Card extends Component {
   //   console.log("Focused with text: " + text); //
   // };
 
-  _handleFocusOutDescription = (description) => {
+  _handleFocusOutDescription = (description, id) => {
     console.log("Left editor with text: " + description);
     this.setState({ description: description });
-    // store state here
   };
 
-  _handleFocusOutImgSrc = (imgsrc) => {
+  _handleFocusOutImgSrc = (imgsrc, id) => {
     // console.log("Left editor with text: " + imgsrc);
     this.setState({ imgsrc: imgsrc });
-    // store state here
+    // stored state here
   };
 
   render() {
@@ -53,16 +52,17 @@ class Card extends Component {
           text={description}
           labelClassName="myLabelClass"
           inputClassName="myInputClass"
-          inputWidth="200px"
-          inputHeight="25px"
-          inputMaxLength="50"
-          labelFontWeight="bold"
-          inputFontWeight="bold"
+          // inputWidth="200px"
+          // inputHeight="25px"
+          // inputMaxLength="50"
+          // labelFontWeight="bold"
+          // inputFontWeight="bold"
           // onFocus={this._handleFocus}
           onFocusOut={this._handleFocusOutDescription}
         />
 
-        <EditableLabel
+        {/* add in imgsrc later  */}
+        {/* <EditableLabel
           text={imgsrc}
           labelClassName="myLabelClass"
           inputClassName="myInputClass"
@@ -73,7 +73,7 @@ class Card extends Component {
           inputFontWeight="bold"
           // onFocus={this._handleFocus}
           onFocusOut={this._handleFocusOutImgSrc}
-        />
+        /> */}
 
         <button
           onClick={() => this.editCardInfo(id)}
@@ -83,7 +83,7 @@ class Card extends Component {
           aria-pressed="false"
           autocomplete="off"
         >
-          Edit Card
+          {/* Edit Card */}~ ☼ ~ ☼ ~ ☼ ~ ☼ ~ ☼ ~
         </button>
 
         <button
@@ -91,7 +91,7 @@ class Card extends Component {
           type="button"
           class="btn btn-light"
         >
-          Delete Card
+          <i>Delete Card</i>
         </button>
 
         {/* {this.state.showDetails && <HogDetails hog={this.props.hog} />} */}

@@ -3,6 +3,7 @@ import "./App.css";
 import Cards from "./Cards";
 import Deck from "./Deck";
 import CreateCard from "./CreateCard";
+import { Route, Switch, Link, NavLink, withRouter } from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -30,6 +31,8 @@ class App extends Component {
   //   console.log(description);
   //   console.log(imgsrc);
   // };
+
+  renderCreateCard = () => <CreateCard routeCreateCard={this.handleForm} />;
 
   createCard = (description, imgsrc, deck) => {
     console.log(description);
@@ -128,6 +131,10 @@ class App extends Component {
           // key = {value}
         />
         <CreateCard onSubmit={this.createCard} />
+
+        <Switch>
+          <Route exact path="/test" component={Deck} />
+        </Switch>
       </div>
     );
   }
@@ -135,4 +142,4 @@ class App extends Component {
 // functional
 // class
 
-export default App;
+export default withRouter(App);

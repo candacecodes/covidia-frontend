@@ -18,6 +18,8 @@ class Deck extends React.Component {
           <option value="3">Statistics</option>
           <option value="4">Trivia</option>
         </select>
+        <br></br>
+        <br></br>
       </div>
     );
   }

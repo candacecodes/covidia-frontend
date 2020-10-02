@@ -8,17 +8,24 @@ class Resources extends Component {
           <br></br>
           ----
           <br></br>
-          If you would like to learn more about COVID19, please check out the
+          If you would like to learn more about COVID-19, please check out the
           following resources:
           <br></br>
         </h3>
-        https://www.cdc.gov/coronavirus/2019-ncov/communication/print-resources.html?Sort=Date%3A%3Adesc
-        <br></br>
-        https://sf.gov/topics/coronavirus-covid-19
-        <br></br>
-        https://www.who.int/emergencies/diseases/novel-coronavirus-2019
-        <br></br>
-        https://www.nih.gov/coronavirus
+        <h4>
+          <a href="https://www.cdc.gov/coronavirus/2019-ncov/communication/print-resources.html?Sort=Date%3A%3Adesc">
+            CDC
+          </a>{" "}
+          //{" "}
+          <a href="https://sf.gov/topics/coronavirus-covid-19">
+            SF COVID Resources
+          </a>{" "}
+          //{" "}
+          <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">
+            WHO COVID Resources
+          </a>{" "}
+          // <a href="https://www.nih.gov/coronavirus">NIH COVID Resources</a>
+        </h4>
       </div>
     );
   }

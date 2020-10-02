@@ -32,7 +32,7 @@ class App extends Component {
   //   console.log(imgsrc);
   // };
 
-  renderCreateCard = () => <CreateCard routeCreateCard={this.handleForm} />;
+  renderCreateCard = () => <CreateCard onSubmit={this.handleForm} />;
 
   createCard = (description, imgsrc, deck) => {
     console.log(description);
@@ -132,9 +132,9 @@ class App extends Component {
         />
         <CreateCard onSubmit={this.createCard} />
 
-        <Switch>
-          <Route exact path="/test" component={Deck} />
-        </Switch>
+        {/* <Switch>
+          <Route exact path="/createcard" render={this.renderCreateCard} />
+        </Switch> */}
       </div>
     );
   }

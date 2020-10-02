@@ -16,7 +16,9 @@ class CreateCard extends Component {
     // console.log(description);
     // console.log(imgsrc);
     // this.props.createCard(description, imgsrc);
+
     this.props.onSubmit(description, imgsrc, deck);
+    console.log(this.props);
   };
 
   handleDescriptionChange = (e) => {

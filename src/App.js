@@ -3,6 +3,7 @@ import "./App.css";
 import Cards from "./Cards";
 import Deck from "./Deck";
 import CreateCard from "./CreateCard";
+import Resources from "./Resources";
 import { Route, Switch, Link, NavLink, withRouter } from "react-router-dom";
 
 class App extends Component {
@@ -132,9 +133,9 @@ class App extends Component {
         />
         <CreateCard onSubmit={this.createCard} />
 
-        {/* <Switch>
-          <Route exact path="/createcard" render={this.renderCreateCard} />
-        </Switch> */}
+        <Switch>
+          <Route exact path="/resources" component={Resources} />
+        </Switch>
       </div>
     );
   }
